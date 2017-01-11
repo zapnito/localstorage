@@ -1,6 +1,6 @@
 // Code borrowed shamelessly from https://github.com/w0rm/elm-flatris
 
-var _fredcy$localstorage$Native_LocalStorage = function()
+var _zapnito$localstorage$Native_LocalStorage = function()
 {
     function storageAvailable(type) {
 	try {
@@ -22,7 +22,7 @@ var _fredcy$localstorage$Native_LocalStorage = function()
     var fail = _elm_lang$core$Native_Scheduler.fail;
     var Nothing = _elm_lang$core$Maybe$Nothing;
     var Just = _elm_lang$core$Maybe$Just;
-    
+
 
     function set(key, value) {
         return nativeBinding(function(callback) {
@@ -44,7 +44,7 @@ var _fredcy$localstorage$Native_LocalStorage = function()
             ));
         });
     }
-    
+
 
     function remove (key) {
         return nativeBinding(function(callback) {
@@ -52,7 +52,7 @@ var _fredcy$localstorage$Native_LocalStorage = function()
             return callback(succeed( unit ));
         });
     }
-    
+
 
     var keys = nativeBinding(function(callback) {
         var _keys = [];
@@ -75,7 +75,7 @@ var _fredcy$localstorage$Native_LocalStorage = function()
     var storageFail = nativeBinding(function(callback) {
             return callback(fail( {ctor: 'NoStorage'} ));
     });
-    
+
 
     if (storageAvailable('localStorage')) {
         return {
